@@ -58,10 +58,23 @@ function loadList(callback) {
 
 function check(e) {
   var form = e.target.parentNode;
+  var li = form.parentNode;
+
   form.setAttribute("class", (e.target.checked)? "crossed" : "");
   var audio = new Audio((e.target.checked) ? "check.mp3" : "eraser.mp3");
   audio.play();
-  update();
+
+  setTimeout(() => {
+    if (e.target.checked) {
+      var forNext = document.querySelector(".forNext");
+      var list = document.querySelector("ul");
+      list.removeChild(forNext);
+
+      list.appendChild(li);
+      list.appendChild(forNext);
+    }
+    update();
+  }, 900);
 }
 
 function edit(e) {
@@ -131,8 +144,6 @@ function update() {
   var data = [];
   var forNext = document.querySelector(".forNext");
   var list = document.querySelector("ul");
-  // list.removeChild(forNext);
-  // console.log(list);
 
   for (let i = 0; i < list.children.length - 1; i++) {
     data.push({
@@ -153,6 +164,7 @@ function update() {
   xml.onreadystatechange = () => {
     if (xml.readyState == 4 && xml.status == 200) {
       console.log("success");
+
     }
   };
   xml.send(data);
