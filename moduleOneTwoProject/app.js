@@ -15,6 +15,7 @@ app.use(bodyParser.urlencoded({
 }));
 app.use(bodyParser.json());
 
+// adds a new list item to the list JSON
 app.post("/list", (req, res) => {
   var item = req.body;
   list.push(item);
@@ -22,6 +23,7 @@ app.post("/list", (req, res) => {
   res.end();
 });
 
+// deletes an item from the list JSON
 app.post("/delete", (req, res) => {
   var id = req.body.id;
   list.splice(id, 1);
@@ -29,6 +31,7 @@ app.post("/delete", (req, res) => {
   res.end();
 });
 
+// updates the list with new items
 app.post("/update", (req, res) => {
 
   for (var i = 0; i < req.body.data.length; i++) {

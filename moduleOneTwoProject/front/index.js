@@ -3,6 +3,7 @@ loadList(response => {
   document.getElementById("focus").focus();
 });
 
+// builds the page DOM with the JSON from the backend
 function buildPage(listJSON) {
   var forNext = document.querySelector(".forNext");
   var list = document.querySelector("ul");
@@ -44,6 +45,7 @@ function buildPage(listJSON) {
 
 }
 
+// gets the JSON file
 function loadList(callback) {
   var xml = new XMLHttpRequest();
   xml.overrideMimeType("application/json");
@@ -56,6 +58,7 @@ function loadList(callback) {
   xml.send(null);
 }
 
+// function for check box, plays sound and changes class to show its checked or not
 function check(e) {
   var form = e.target.parentNode;
   form.setAttribute("class", (e.target.checked)? "crossed" : "");
@@ -64,6 +67,7 @@ function check(e) {
   update();
 }
 
+// onclick for label, replaces label with text input and focus' it
 function edit(e) {
   text = e.target.innerText;
   node = document.createElement("input");
@@ -75,6 +79,7 @@ function edit(e) {
   document.querySelector("#toFocus").focus();
 }
 
+// focusoff for text input, changes it back to a label
 function editOff(e) {
   text = e.target.value;
   node = document.createElement("label");
@@ -85,6 +90,7 @@ function editOff(e) {
   update();
 }
 
+// submits a new item to be added to the JSON list
 function submitData (e) {
   e.preventDefault();
   item = e.target[0].value;
@@ -104,6 +110,7 @@ function submitData (e) {
   xml.send(data);
 }
 
+// onclick for delete button, removes the item from the list JSON and reloads
 function deleteItem (e) {
   e.preventDefault();
   e.target.setAttribute("class", "delete");
@@ -127,12 +134,11 @@ function deleteItem (e) {
   }, 1100);
 }
 
+// makes a new JSON list and sends it to replace the one on the backend
 function update() {
   var data = [];
   var forNext = document.querySelector(".forNext");
   var list = document.querySelector("ul");
-  // list.removeChild(forNext);
-  // console.log(list);
 
   for (let i = 0; i < list.children.length - 1; i++) {
     data.push({
