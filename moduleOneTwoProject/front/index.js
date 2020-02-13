@@ -61,10 +61,23 @@ function loadList(callback) {
 // function for check box, plays sound and changes class to show its checked or not
 function check(e) {
   var form = e.target.parentNode;
+  var li = form.parentNode;
+
   form.setAttribute("class", (e.target.checked)? "crossed" : "");
   var audio = new Audio((e.target.checked) ? "check.mp3" : "eraser.mp3");
   audio.play();
-  update();
+
+  setTimeout(() => {
+    if (e.target.checked) {
+      var forNext = document.querySelector(".forNext");
+      var list = document.querySelector("ul");
+      list.removeChild(forNext);
+
+      list.appendChild(li);
+      list.appendChild(forNext);
+    }
+    update();
+  }, 900);
 }
 
 // onclick for label, replaces label with text input and focus' it
@@ -159,6 +172,7 @@ function update() {
   xml.onreadystatechange = () => {
     if (xml.readyState == 4 && xml.status == 200) {
       console.log("success");
+
     }
   };
   xml.send(data);

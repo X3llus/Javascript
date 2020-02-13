@@ -1,10 +1,6 @@
 [
   {
-    "check": true,
-    "item": "Finish this"
-  },
-  {
-    "check": true,
-    "item": "Host"
+    "check": false,
+    "item": "Things"
   }
 ]
