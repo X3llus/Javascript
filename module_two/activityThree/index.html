@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Selecting Elements</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://fonts.googleapis.com/css?family=Bangers&display=swap" rel="stylesheet">
+  <link href="main.css" rel="stylesheet">
+<script src="main.js" async></script>
+</head>
+
+<body class="container">
+  <header>
+    <h1> Selecting Elements</h1>
+  </header>
+  <main id="mainElement">
+     <section>
+     <h2> Accessing Elements is Easy When You Understand The DOM</h2>
+     <p class="orange">
+       There are a few different ways that we can select the element node (which is the DOM's representation of an HTML element). Some methods allow us to return one element, while others return a bunch of related elements called a nodeList (kind of like an array of elements - but NOT an array! It's called a nodeList - remember this during an interview! 🤓 😎).
+     </p>
+    </section>
+    <section>
+     <p>
+       Not sure which method to choose? It depends on which element you are trying to target. If you only need one element, you can use <code>querySelector()</code> or <code>getElementById</code>. If you are looking to target more than one element or the element you are trying to target does not have an id and is not the first instance of that element, you'll need to use <code>getElementsByClassName</code>, <code> getElementsByTagName</code> or<code>querySelectorAll()</code>.
+     </p>
+    </section>
+    <section>
+     <p class="orange">
+        Remember, when creating website and applications, speed matters! We want our websites and applications to load and respond quickly. That's why it's best to try and target and select elements in the most direct way possible and using the minimum amount of nodes to get there. That's why <code>getElementById()</code>, is the most efficent way to target an element node as there can only be one element with a specific node on each page. That definitely doesn't mean adding ids to all our elements, however!
+     </p>
+    </section>
+  </main>
+  <footer>
+    COMP1073 - All About The DOM - &copy 2020.
+  </footer>
+</body>
+</html>

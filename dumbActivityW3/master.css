@@ -1,0 +1,55 @@
+@charset "UTF-8";
+/* CSS Document */
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smooting: grayscale;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  font-size: 1em;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #14d990;
+}
+
+.container {
+  text-align: center;
+  background-color: #ffffff;
+
+}
+
+.inner {
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 30px;
+}
+
+ul {
+  padding: 30px;
+}
+
+ul li {
+  list-style: none;
+  line-height: 30px 0 45px 0;
+  font-family: 'Bangers', cursive;
+  font-size: 2em;
+}
+
+h1 {
+  font-size: 6em;
+  padding-bottom: 60px;
+  font-family: 'Bangers', cursive;
+}
+
+form {
+  padding-bottom: 40px;
+}

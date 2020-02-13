@@ -1,0 +1,30 @@
+@charset "UTF-8"
+
+body {
+  font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
+}
+
+.wrapper {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #BADA55;
+  height: 300px;
+}
+
+h1 {
+  font-size: 1.8em;
+  text-align: center;
+  color: #fff;
+  padding-top: 100px;
+}
+
+button {
+  margin-top: 50px;
+  width: 300px;
+  padding: 30px;
+  color: #fff;
+  background-color: purple;
+  display: block;
+  margin: 0 auto;
+  font-size: 1.2em;
+}
